@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="scoreboard" class="scoreboard">
+		<div id="score" class="board-item">
+			<div class="label">SCORE</div>
+			<div id="score-val" class="value">0000</div>
+		</div>
+		<div id="time" class="board-item">
+			<div class="label">TIME</div>
+			<div id="time-val" class="value">0000</div>
+		</div>
+		<div id="tries" class="board-item">
+			<div class="label">TRIES</div>
+			<div id="tries-val" class="value">0000</div>
+		</div>
+	</div>
+	<div id="win" class="win">
+		You Win!
+	</div>
+	<div id="world" onmousemove="getMousePos(event)">
+		<div id="startPlatform" class="platform"></div>
+		<div id="endPlatform" class="platform"></div>
+		<div id="player" onmousedown="toggleSpawn(event)">
+			<div id="tail"></div>
+		</div>
+		<div id="wall1" class="wall" ontransitionend="toggleWalls()">
+			<div class="bolt bolt1"></div>
+			<img src="img/wall.png">
+			<div class="bolt bolt2"></div>
+		</div>
+		<div id="wall2" class="wall">
+			<div class="bolt bolt1"></div>
+			<img src="img/wall.png">
+			<div class="bolt bolt2"></div>
+		</div>
+	</div>
+	<div id="v-overlay" class="overlay"></div>
+	<div id="h-overlay" class="overlay"></div>
+	<audio src="audio/nyanmetal.mp3" id="audioNyan" onended="endLevel()"></audio>
+	<script type="text/javascript" src="script/script.js"></script>
+</body>
+</html>

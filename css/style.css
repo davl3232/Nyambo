@@ -1,0 +1,174 @@
+html, body, #world {
+	height: 720px;
+	width: 1280px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	z-index: 0;
+}
+
+#world {
+	position: absolute;
+	background: url("../img/nyanBG.gif");
+	height: 720px;
+	width: 1280px;
+}
+
+#player {
+	position: absolute;
+	width: 136px;
+	height: 84px;
+	background-image: url("../img/nyan.gif");
+	background-size: 136px 84px;
+	z-index: 50;
+}
+
+#h-overlay {
+	width: 100%;
+	height: calc(100% - 720px);
+	top: 720px;
+}
+
+#v-overlay {
+	width: calc(100% - 1280px);
+	height: 100%;
+	left: 1280px;
+}
+
+.scoreboard {
+	transition: all 1s ease-in-out;
+	font-size: 1em;
+	justify-content: space-between;
+	color: white;
+	font-family: "Verdana";
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	top: 0.8em;
+	left: calc((1280px - 22.0em)/2);
+	height: 4.4em;
+	width: 22.0em;
+	z-index: 200;
+	pointer-events: none;
+}
+
+.big {
+	font-size: 3em;
+}
+
+.board-item {
+	margin: 5px;
+	display: flex;
+	flex-grow: 1;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	font-size: 1em;
+}
+
+.label {
+}
+
+.value {
+	background: rgba(125,255,125,0.2);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	flex-grow: 1;
+	border: 5px ridge white;
+	border-radius: 5px;
+}
+
+.overlay {
+	position: absolute;
+	background: black;
+	z-index: 200;
+}
+
+.bomb {
+	position: absolute;
+	width: 100px;
+	height: 50px;
+	z-index: 50;
+}
+
+.explosion {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	transition: opacity 0.5s;
+	z-index: 100;
+}
+
+.wall {
+	position: absolute;
+	width: 156px;
+	height: 383px;
+	z-index: 20;
+}
+
+.wall img {
+	position: relative;
+}
+
+.bolt {
+	position: relative;
+	width: 64px;
+	height: 383px;
+	opacity: 0;
+	background: url("../img/bolt.gif");
+	background-repeat: repeat-y;
+	transition: opacity 0.2s ease-in-out;
+	z-index: -1;
+}
+
+.bolt1 {
+	position: absolute;
+	float: right;
+	top: 0;
+	right: 0;
+}
+
+.bolt2 {
+	position: absolute;
+	float: left;
+	bottom: 0;
+	left: 0;
+}
+
+.platform {
+	position: absolute;
+	transition: opacity 0.5s ease-in-out;
+	z-index: 20;
+}
+
+#startPlatform {
+	background: linear-gradient(to bottom, #c9de96 0%,#8ab66b 44%,#398235 100%);
+}
+
+#endPlatform {
+	opacity: 0;
+	background: linear-gradient(to bottom, #a90329 0%,#8f0222 44%,#6d0019 100%);
+}
+
+.win {
+	position: absolute;
+	left: calc((1280px - 1000px)/2);
+	width: 1000px;
+	text-align: center;
+	font-family: Verdana;
+	top: 2em;
+	font-size: 1em;
+	opacity: 0;
+	transition: all 1s ease-in-out;
+	z-index: 200;
+	color: white;
+	pointer-events: none;
+}
+
+.bigWin {
+	font-size: 10em;
+	opacity: 1;
+}
